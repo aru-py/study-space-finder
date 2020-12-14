@@ -1,6 +1,6 @@
 <div class='card my-3 w-100'>
   <div class="row no-gutters bg-secondary">
-    <div class="col" (click)="expand = !expand; print()">
+    <div class="col" (click)="expand = !expand;">
       <h3 class='card-title pl-4 py-3 text-white font-weight-bold'>
         {{result.room}}
       </h3>
@@ -8,7 +8,7 @@
     <div class="col text-right">
       <h3 class="mr-3 py-3">
       <span *ngIf="result.open && !expand" class="badge badge-success">Open</span>
-      <span *ngIf="result.open && expand" class="badge badge-success" (click)="reserved = !reserved" [ngClass]="{'badge-warning':!reserved}">{{reserved ? 'Reserved' : 'Reserve' + ' | '}}</span>
+      <span *ngIf="result.open && expand" class="badge badge-success" (click)="reserved = !reserved" [ngClass]="{'badge-warning':!reserved}">{{reserved ? 'Reserved' : 'Reserve'}}</span>
       <span *ngIf="!result.open" class="badge badge-danger ">Closed</span>
       </h3>
     </div>
@@ -32,7 +32,6 @@
             <ng-container *ngFor="let time of times; index as i">
                 <h6 class="text-muted h-100" style="display:inline-block;position:absolute" [ngStyle]="{'margin-left.%':i*13.05}" [ngClass]="{'d-none':i%2, 'd-md-block':i%2}">{{time}}</h6>
             </ng-container>
-            <!-- <h6 class="text-muted h-100" style="display:inline-block;position:absolute" [ngStyle]="{'margin-left.%':currentOffset}">Now</h6> -->
           </div>
       </div>
   </div>

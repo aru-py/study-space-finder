@@ -36,7 +36,6 @@ currentOffset: any;
       if (course.hasClassesToday != -1) {
           course.offset = (moment.duration(course.start.diff(moment("7:30 am","LT"))).asMinutes()/numHours*60) * 100;
           course.width = (moment.duration(course.end.diff(course.start)).asMinutes()/numHours*60) * 100;
-          // console.log(c.offset, c.width)
         }
     }
   }

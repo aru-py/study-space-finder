@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
 
       for (let course of classroom.courses) {
         // checks if course has classes today
-        course.hasClassesToday = course.Days.indexOf(this.days[this.now.day()]);
+        course.hasClassesToday = course.Days.indexOf(this.days[this.now.day() + 1]);
         // if course has classes calculate information
         if (course.hasClassesToday != -1) {
           // ***this should be precalculated
