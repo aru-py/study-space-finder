@@ -12,4 +12,5 @@ A defunct example will be permanently available at [studyspacefinder.web.app](ht
 </p>
 
 ## Notes
-This project is no longer maintained.
+Unfortunately, the university was not in a position to accept such a proposal due to various external factors, such as safety, that would have to be considered. I wish to thank all those who contributed to this endeavor, both with code and thoughts.
+
