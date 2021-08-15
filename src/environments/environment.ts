@@ -2,8 +2,16 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import {PT} from '../app/globals';
+
 export const environment = {
-  production: false
+    production: false,
+
+    // 8:20 A.M on a Friday Morning
+    now: {
+        time: PT.from('08:20'),
+        day: 5
+    }
 };
 
 /*
