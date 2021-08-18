@@ -1,5 +1,7 @@
 # Study Space Finder
-
+```
+Find unused classrooms to study in Clemson University
+```
 
 ## Overview
 It’s sometimes difficult to find a quiet study space on Clemson University’s 
@@ -10,10 +12,12 @@ was to help reduce overcrowding at Cooper Library, and after surveying
 hundreds of students, it was proposed to the university in March of 2020.  
 
 <br>
-<p align="center">
 <img width="50%" src="/docs/study_space_finder.gif"></img>
-</p>
+
+
+## Contributing
+If you find an issue or believe a feature should be added, please reach out and I will look into it. If you are a current student, you can help keep the site up to date by sending data from the course registration portal.
 
 ## Notes
-Unfortunately, the university was not in a position to accept the proposal due to external factors, such as safety, that would have to be considered.
-
+Unfortunately, the university was not in a position to accept the proposal due to factors such as safety
+that would have to be considered. I want to thank everyone involved for the support they offered.
