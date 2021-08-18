@@ -1,0 +1,63 @@
+<div class='card my-3 w-100'>
+
+    <!--General Room Information-->
+    <div class="row no-gutters bg-secondary">
+        <!--Room Name-->
+        <div class="col" (click)="selected = !selected;">
+            <h3 class='card-title pl-4 py-3 text-white font-weight-bold'>
+                {{room.name}}
+            </h3>
+        </div>
+        <!--Room State-->
+        <div class="col text-right">
+            <h3 class="mr-3 py-3">
+                <span *ngIf="room.state.open && !selected" class="badge badge-success">Open</span>
+                <span *ngIf="room.state.open && selected" class="badge badge-success"
+                      (click)="room['reserved'] = !room['reserved']"
+                      [ngClass]="{'badge-warning':!room['reserved']}">
+                    {{room['reserved'] ? 'Reserved' : 'Reserve'}}
+                </span>
+                <span *ngIf="!room.state.open" class="badge badge-danger ">Closed</span>
+            </h3>
+        </div>
+    </div>
+
+    <!--Detailed Information-->
+    <div class='card-body py-3'>
+        <div id="text">
+            <h4 *ngIf="!room.state.open"><b>Current Class:</b> {{room.state.course}}</h4>
+            <h4 *ngIf="untilNext && room.state.open"><b>Time until next class:
+            </b>{{untilNext}}</h4>
+            <h4 *ngIf="!untilNext"><b>No Classes For Rest of Day</b></h4>
+        </div>
+
+        <!--Room Schedule-->
+        <div id="timeline" *ngIf="selected">
+            <div class="bg-dark mt-3" style="height: 30px; border-radius: 5px; position:relative">
+                <!--Course Times-->
+                <ng-container *ngFor="let block of schedule">
+                    <div class="bg-warning h-100" style="display:inline-block; position: absolute"
+                         [ngStyle]="{'margin-left.%':block.offset,'width.%': block.width}">
+                    </div>
+                </ng-container>
+                <!--Current Time Marker-->
+                <div class="bg-primary h-100" style="display:inline-block;position:absolute;width:20px"
+                     [ngStyle]="{'margin-left.%': nowBlock}">
+                </div>
+            </div>
+
+            <!--            todo do times-->
+            <!--Times-->
+            <div class="pb-4">
+                <ng-container *ngFor="let time of []; index as i">
+                    <h6 class="text-muted h-100" style="display:inline-block;position:absolute"
+                        [ngStyle]="{'margin-left.%':i*13.05}" [ngClass]="{'d-none':i%2, 'd-md-block':i%2}">{{time}}</h6>
+                </ng-container>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>

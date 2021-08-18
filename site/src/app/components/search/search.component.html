@@ -1,0 +1,51 @@
+<!--Search Bar-->
+<section class="bg-secondary py-5 w-100">
+    <div class='container container-fluid'>
+        <div class='text-center text-light mt-5 pb-3'>
+            <h1 routerLink="/">Study Space Finder</h1>
+            <h2>Better Than Cooper Library.</h2>
+        </div>
+        <form>
+            <div class='form-row'>
+                <input [(ngModel)]="query"
+                       autocomplete="off"
+                       class='form-control form-control-lg col' name='building'
+                       placeholder="Type a building or classroom. E.g. Hogwarts."
+                       type='text'/>
+                <button
+                        type='submit' class='btn btn-primary btn-large col'
+                        (click)="search(query)">Search
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!--Results-->
+<section class="container" style="min-height:70vh">
+    <div class="px-md-5 pt-3">
+        <div *ngIf="results.length > 0">
+            <!-- Message -->
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="font-weight-bold">Notice</h2>
+                    <h4>
+                        These are the results as they appeared on Friday, March 13th, 2020, at 8:20 a.m.
+                    </h4>
+                </div>
+            </div>
+
+            <!--Rooms-->
+            <div *ngFor="let result of results.slice(0,numRoomsToShow)">
+                <app-result
+                        [room]="result"
+                        [selected]="selectedRoom == result"
+                        (click)="selectedRoom = result">
+                </app-result>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
